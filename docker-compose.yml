@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres
+    container_name: infra_db
+    restart: always
+    environment:
+      POSTGRES_DB: infraprovisioner
+      POSTGRES_USER: infraprovisioner
+      POSTGRES_PASSWORD: 1N3frA1bl0N3R
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./volumes/db:/var/lib/postgresql/data
